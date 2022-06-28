@@ -34,29 +34,35 @@
             </div>
         </div>
         <div class="hd-border">
-            <div class="hd-sub-container">
-                <div v-if="nav === 'community'" class="hd-sub-wrap">
-                    <div v-for="item in communitys" :key="item">
-                        <p class="hd-sub-wrap-p" :class="{'hd-nav-sub-active': nav_sub === item}"  v-on:click="nav_sub = item">
-                            {{ item }}
-                            <span v-if="betas.includes(item)" class="hd-sub-wrap-beta">BETA</span>
-                        </p>
+            <div>
+                <div class="hd-sub-container">
+                    <div v-if="nav === 'community'" class="hd-sub-wrap">
+                        <div v-for="item in communitys" :key="item">
+                            <p class="hd-sub-wrap-p" :class="{'hd-nav-sub-active': nav_sub === item}"  v-on:click="nav_sub = item">
+                                {{ item }}
+                                <span v-if="betas.includes(item)" class="hd-sub-wrap-beta">BETA</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div v-else-if="nav === 'store'" class="hd-sub-wrap">
-                    <div v-for="item in stores" :key="item">
-                        <p class="hd-sub-wrap-p" :class="{'hd-nav-sub-active': nav_sub === item}" v-on:click="nav_sub = item">
-                            {{ item }}
-                            <img v-if="news.includes(item)" class="nav-new-icon" src="../assets/new.png">
-                        </p>
+                    <div v-else-if="nav === 'store'" class="hd-sub-wrap">
+                        <div v-for="item in stores" :key="item">
+                            <p class="hd-sub-wrap-p" :class="{'hd-nav-sub-active': nav_sub === item}" v-on:click="nav_sub = item">
+                                {{ item }}
+                                <img v-if="news.includes(item)" class="nav-new-icon" src="../assets/new.png">
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div v-else class="hd-sub-wrap">
-                    <div v-for="item in moves" :key="item" >
-                        <p class="hd-sub-wrap-p" :class="{'hd-nav-sub-active': nav_sub === item}" v-on:click="nav_sub = item">
-                            {{ item }}
-                        </p>
-                    </div>                
+                    <div v-else class="hd-sub-wrap">
+                        <div v-for="item in moves" :key="item" >
+                            <p class="hd-sub-wrap-p" :class="{'hd-nav-sub-active': nav_sub === item}" v-on:click="nav_sub = item">
+                                {{ item }}
+                            </p>
+                        </div>                
+                    </div>
+                    <div class="hd-sub-wrap-r">
+                        <span style="color: #35C5F0; font-weight: bold;">3D인테리어</span>
+                        <img src="../assets/next.png" style="height: 18px; width: 18px">
+                    </div>
                 </div>
             </div>
         </div>
@@ -180,14 +186,21 @@ export default {
         white-space: nowrap;
     }
     .hd-sub-container {
-        max-width: 1256px;
+        max-width: 1180px;
         margin: 0 auto;
         padding: 0 60px;
+        display: flex;
+        align-items: center;
     }
     .hd-sub-wrap {
         display: flex;
-        padding: 0 40px;
-        box-sizing: inherit;
+        padding: 0;
+        box-sizing: border-box;
+        flex: 1 0 0px;
+    }
+    .hd-sub-wrap-r {
+        display: flex;
+        align-items: center;
     }
     .hd-sub-wrap-p {
         margin: 0 5px;
