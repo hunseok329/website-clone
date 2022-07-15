@@ -91,7 +91,7 @@ export default {
         border-bottom: 1px solid #EAEDEF;
     }
     .hd-container {
-        max-width: 1256px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 0 60px;
     }
@@ -186,7 +186,7 @@ export default {
         white-space: nowrap;
     }
     .hd-sub-container {
-        max-width: 1180px;
+        max-width: 1136px;
         margin: 0 auto;
         padding: 0 60px;
         display: flex;
